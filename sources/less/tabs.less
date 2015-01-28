@@ -1,0 +1,79 @@
+.nav-tabs--wrap {
+  background: #fff;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,.2);
+  margin: 0 -15px;
+  padding: 0 30px;
+  position: relative;
+
+  .nav-tabs {
+    border: 0;
+    margin: 0;
+    .transition(left 0.5s ease-out);
+  }
+
+  a {
+    background: none !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    
+    margin: 0 !important;
+    padding: 20px 12px;
+    position: relative;
+    text-transform: uppercase; 
+    .transition(background .5s .2s ease-in-out);
+
+    @media (max-width: @screen-xs-max) {
+      font-size: 12px;
+    }
+
+    &:before {
+      background: none;
+      bottom: 0;
+      content: '';
+      height: 3px;
+      left: 20%;
+      position: absolute;
+      width: 60%;
+      .transition(background .3s ease-in);
+    }
+    &.touch {
+      background: fade(@brand-primary, 10%) !important;
+    }
+  }
+
+  .active a {
+    &:before {
+      background: @brand-primary;
+    }
+  }
+}
+.nav-tabs--arrow {
+  background: #fff;
+  color: #777;
+  cursor: pointer;
+  height: 100%;
+  opacity: 1;
+  padding: 10px 6px;
+  position: absolute;
+  top: 0;
+  .transition(opacity .3s ease-in);
+  width: 30px;
+
+  border: 1px solid #e5e5e5;
+  border-bottom: 0;
+  padding-top: 8px;
+  background: #fff;
+}
+
+.nav-tabs--arrow__prev {
+  left: 0;
+}
+
+.nav-tabs--arrow__next {
+  right: 0;
+}
+
+.nav-tabs--arrow__hidden {
+  opacity: 0;
+  cursor: default;
+}
